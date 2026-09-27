@@ -1,0 +1,267 @@
+/* ============================================================
+   ONLINE EXAMINATION SYSTEM - GOLD & PURPLE THEME
+   ============================================================ */
+
+:root {
+    --purple-dark:   #2e0a4f;
+    --purple-main:   #5b1a8c;
+    --purple-light:  #8a4fd6;
+    --purple-pale:   #f3ecfb;
+    --gold-main:     #d4af37;
+    --gold-light:    #f2d879;
+    --gold-dark:     #a9862f;
+    --white:         #ffffff;
+    --text-dark:     #241536;
+    --danger:        #c0392b;
+    --success:       #1e7d4f;
+    --radius:        12px;
+    --shadow:        0 8px 24px rgba(46, 10, 79, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-main) 45%, var(--purple-light) 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* ---------- Top Navigation ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: var(--purple-dark);
+    border-bottom: 3px solid var(--gold-main);
+}
+
+.navbar .brand {
+    color: var(--gold-light);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.navbar .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    background: var(--gold-main);
+    color: var(--purple-dark);
+}
+
+/* ---------- Page Container ---------- */
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px;
+    margin-bottom: 24px;
+    border-top: 5px solid var(--gold-main);
+}
+
+.card h1, .card h2, .card h3 {
+    color: var(--purple-dark);
+    margin-top: 0;
+}
+
+.auth-card {
+    max-width: 420px;
+    margin: 60px auto;
+}
+
+/* ---------- Forms ---------- */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--purple-main);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 2px solid var(--purple-pale);
+    border-radius: 8px;
+    font-size: 15px;
+    background: var(--purple-pale);
+    transition: border 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold-main);
+    background: var(--white);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
+    color: var(--purple-dark);
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(212,175,55,0.4); }
+
+.btn-secondary {
+    background: var(--purple-main);
+    color: var(--white);
+}
+
+.btn-secondary:hover { transform: translateY(-2px); background: var(--purple-dark); }
+
+.btn-danger {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.btn-block { width: 100%; text-align: center; }
+
+/* ---------- Alerts ---------- */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+.alert-error { background: #fbe4e1; color: var(--danger); border: 1px solid var(--danger); }
+.alert-success { background: #e1f5eb; color: var(--success); border: 1px solid var(--success); }
+
+/* ---------- Tables ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--purple-pale);
+}
+th {
+    background: var(--purple-main);
+    color: var(--gold-light);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+tr:hover td { background: var(--purple-pale); }
+
+/* ---------- Badges ---------- */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.badge-pass { background: #e1f5eb; color: var(--success); }
+.badge-fail { background: #fbe4e1; color: var(--danger); }
+.badge-pending { background: var(--gold-light); color: var(--purple-dark); }
+
+/* ---------- Exam list ---------- */
+.exam-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    border: 2px solid var(--purple-pale);
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    transition: 0.2s;
+}
+.exam-item:hover { border-color: var(--gold-main); }
+.exam-item h3 { margin: 0 0 6px 0; color: var(--purple-main); }
+.exam-item .meta { color: #666; font-size: 14px; }
+
+/* ---------- Timer ---------- */
+.timer-box {
+    position: sticky;
+    top: 12px;
+    background: var(--purple-dark);
+    color: var(--gold-light);
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 2px solid var(--gold-main);
+    z-index: 10;
+}
+
+/* ---------- Question block ---------- */
+.question-block {
+    border-left: 5px solid var(--gold-main);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    background: var(--purple-pale);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.question-block .q-title { font-weight: 700; color: var(--purple-dark); margin-bottom: 10px; }
+.option-label {
+    display: block;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: var(--white);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.option-label:hover { border-color: var(--gold-main); }
+.option-label input { margin-right: 10px; }
+
+/* ---------- Result display ---------- */
+.result-score {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--gold-dark);
+    text-align: center;
+}
+.result-status-pass { color: var(--success); }
+.result-status-fail { color: var(--danger); }
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    color: var(--purple-pale);
+    padding: 24px;
+    font-size: 13px;
+}
